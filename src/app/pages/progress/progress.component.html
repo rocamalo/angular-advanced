@@ -4,9 +4,14 @@
             <div class="card-body">
                 <h4 class="card-title">Striped Progress bar </h4>
                 <div class="progress m-t-20">
+                    <div class="progress-bar bg-primary progress-bar-striped active" aria-valuenow="85" aria-valuemin="0"
+                        aria-valuemax="100" style="height:10px;" [style.width]="getPercentage1" role="progressbar">
+                    </div>
+                </div>
+                <div class="progress m-t-20">
                     <div class="progress-bar bg-info progress-bar-striped active" aria-valuenow="85" aria-valuemin="0"
-                        aria-valuemax="100" style="width: 85%; height:10px;" role="progressbar"> <span
-                            class="sr-only">85% Complete (success)</span> </div>
+                        aria-valuemax="100" style="height:10px;" [style.width]="getPercentage2" role="progressbar">
+                    </div>
                 </div>
             </div>
         </div>
@@ -19,34 +24,14 @@
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button">
-                            <i class="fa fa-minus"></i>
-                        </button>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Product name">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">
-                            <i class="fa fa-plus"></i>
-                        </button>
-                    </span>
-                </div>
+                <app-incrementador (valorSalida)="progress1 = $event" [progress]="progress1"></app-incrementador>
             </div>
         </div>
     </div>
     <div class="col-6">
         <div class="card">
             <div class="card-body">
-                <div class="input-group">
-                    <span class="input-group-btn">
-                        <button class="btn btn-danger" type="button">Hate it</button>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Product name">
-                    <span class="input-group-btn">
-                        <button class="btn btn-success" type="button">Love it</button>
-                    </span>
-                </div>
+                <app-incrementador (valorSalida)="progress2 = $event" [progress]="progress2" btnClass="btn btn-info"></app-incrementador>
             </div>
         </div>
     </div>

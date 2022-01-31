@@ -6,11 +6,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
+
 @NgModule({
   declarations: [
     BreadcrumbsComponent,
     SidebarComponent,
     HeaderComponent,
+
   ],
   exports: [
     BreadcrumbsComponent,
